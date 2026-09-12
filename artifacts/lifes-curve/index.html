@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Life’s Curve by Manisha — Manisha’s Cosmic Academy</title>
+  <meta name="description" content="Structured, practical learning in Tarot, Numerology and Energy Healing with Manisha. Life doesn’t always move in a straight line." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600&family=La+Belle+Aurore&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="cursor-glow" aria-hidden="true"></div>
+  <svg class="life-curve" id="lifeCurve" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+    <defs>
+      <linearGradient id="curveGrad" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#c4a574" stop-opacity="0.15" />
+        <stop offset="40%" stop-color="#6a8f8a" stop-opacity="0.55" />
+        <stop offset="70%" stop-color="#c4a574" stop-opacity="0.7" />
+        <stop offset="100%" stop-color="#c4a09a" stop-opacity="0.4" />
+      </linearGradient>
+    </defs>
+    <path id="curvePath" fill="none" stroke="url(#curveGrad)" stroke-width="0.18" stroke-linecap="round" />
+  </svg>
+
+  <header class="nav" id="nav">
+    <a class="logo" href="#top">Life’s Curve</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#courses">Courses</a>
+      <a href="#about">About Manisha</a>
+      <a href="#consultations">Consultations</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn btn-gold magnetic" href="#courses">Explore Courses</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <main id="top">
+    <section class="hero" id="hero">
+      <div class="hero-orbit" aria-hidden="true"></div>
+      <div class="hero-particles" id="heroParticles" aria-hidden="true"></div>
+      <div class="hero-symbols" id="heroSymbols" aria-hidden="true">
+        <div class="float-card parallax" data-depth="18">
+          <img src="assets/tarot-card.jpg" alt="" />
+        </div>
+        <div class="float-grid parallax" data-depth="12">
+          <span>4</span><span>9</span><span>2</span>
+          <span>3</span><span>5</span><span>7</span>
+        </div>
+        <div class="float-rings parallax" data-depth="24"></div>
+      </div>
+
+      <div class="hero-copy">
+        <div class="brand-intro" aria-hidden="true">
+          <span class="brand-life">Life’s</span>
+          <span class="brand-curve">Curve</span>
+        </div>
+        <p class="eyebrow reveal">Manisha’s Cosmic Academy</p>
+        <h1 class="hero-title">
+          <span class="line"><span class="word">Learn</span> <span class="word">to</span> <span class="word">Read</span> <span class="word">the</span> <span class="word">Signs.</span></span>
+          <span class="line"><span class="word">Understand</span> <span class="word">the</span> <span class="word">Patterns.</span></span>
+          <span class="line italic"><span class="word">Trust</span> <span class="word">Your</span> <span class="word">Intuition.</span></span>
+        </h1>
+        <p class="hero-support reveal">Structured, practical learning in Tarot, Numerology and Energy Healing with Manisha.</p>
+        <div class="hero-actions reveal">
+          <a class="btn btn-gold magnetic" href="#courses">Explore the Courses</a>
+          <a class="btn btn-ghost magnetic" href="#about">Meet Manisha</a>
+        </div>
+        <p class="trust reveal">10+ Years of Guidance & Practice</p>
+      </div>
+
+      <div class="hero-portrait">
+        <div class="portrait-mask">
+          <img src="assets/manisha-hero.jpg" alt="Manisha, founder of Life’s Curve and Manisha’s Cosmic Academy" />
+        </div>
+        <p class="hand script">Life doesn’t always move in a straight line</p>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="about-portrait" data-curve="left">
+        <div class="portrait-frame">
+          <img src="assets/manisha-about.jpg" alt="Editorial portrait of Manisha" />
+        </div>
+      </div>
+      <div class="about-copy">
+        <p class="eyebrow">The Guide Behind Life’s Curve</p>
+        <h2>Meet Manisha</h2>
+        <p class="subhead">Guidance shaped by experience. Perspective backed by 10+ years.</p>
+        <p>My journey into Tarot, Numerology and Energy Healing began with my own experiences of navigating uncertainty, change and life’s unexpected turns.</p>
+        <p>Over the past 10+ years, I’ve combined my analytical background with spiritual practices and intuitive guidance to help people approach their own crossroads with greater awareness.</p>
+        <p>Today, Life’s Curve is that space for you.</p>
+        <div class="stat">
+          <span class="stat-num" data-count="10">10+</span>
+          <span class="stat-label">Years</span>
+        </div>
+        <div class="keywords">
+          <span>Tarot</span>
+          <span>Numerology</span>
+          <span>Energy Healing</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="courses" id="courses" data-curve="center">
+      <div class="section-intro">
+        <p class="eyebrow">Manisha’s Cosmic Academy</p>
+        <h2>Choose What You Want to Master</h2>
+        <p class="lede">Take your interest in Tarot, Numerology or Energy Healing further through structured, practical learning with Manisha.</p>
+      </div>
+
+      <div class="course-track" id="courseTrack">
+        <article class="course-card" id="course-tarot" data-course="tarot">
+          <div class="course-visual">
+            <span class="course-no">01</span>
+            <div class="arch-grid" aria-hidden="true"></div>
+            <img class="tilt-card" src="assets/tarot-card.jpg" alt="Elegant tarot card on an architectural grid" />
+          </div>
+          <div class="course-body">
+            <h3>The Elite Tarot Architect</h3>
+            <p class="meta">4 Weeks · Live</p>
+            <p class="price">₹15,000 <span>/ $249</span></p>
+            <a class="text-link" href="#contact">Explore Tarot Course <span>→</span></a>
+          </div>
+        </article>
+
+        <article class="course-card" id="course-numerology" data-course="numerology">
+          <div class="course-visual">
+            <span class="course-no">02</span>
+            <div class="loshu" aria-hidden="true">
+              <span>4</span><span>9</span><span>2</span>
+              <span>3</span><span>5</span><span>7</span>
+              <span>8</span><span>1</span><span>6</span>
+            </div>
+          </div>
+          <div class="course-body">
+            <h3>Premium Vedic & Loshu Grid Numerology</h3>
+            <p class="meta">6 Weeks · Live</p>
+            <p class="price">₹21,000 <span>/ $349</span></p>
+            <a class="text-link" href="#contact">Explore Numerology <span>→</span></a>
+          </div>
+        </article>
+
+        <article class="course-card" id="course-energy" data-course="energy">
+          <div class="course-visual">
+            <span class="course-no">03</span>
+            <div class="energy-anim" aria-hidden="true">
+              <i></i><i></i><i></i>
+            </div>
+          </div>
+          <div class="course-body">
+            <h3>Quantum Chakra & Bio-Energy Healer</h3>
+            <p class="meta">3 Weeks</p>
+            <p class="price">₹11,000 <span>/ $199</span></p>
+            <a class="text-link" href="#contact">Explore Energy Healing <span>→</span></a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="why" id="why">
+      <div class="section-intro">
+        <p class="eyebrow">The Difference</p>
+        <h2>More Than Learning the Technique</h2>
+      </div>
+      <div class="why-grid">
+        <article class="why-card">
+          <span class="why-index">01</span>
+          <h3>Practical Learning</h3>
+          <p>Structured guidance designed to be understood and applied.</p>
+        </article>
+        <article class="why-card">
+          <span class="why-index">02</span>
+          <h3>Live Guidance</h3>
+          <p>Learn directly with Manisha rather than relying only on recorded content.</p>
+        </article>
+        <article class="why-card">
+          <span class="why-index">03</span>
+          <h3>Intuitive Development</h3>
+          <p>Develop your understanding while building confidence in your own interpretation.</p>
+        </article>
+        <article class="why-card">
+          <span class="why-index">04</span>
+          <h3>Personal Perspective</h3>
+          <p>Learn from more than a decade of experience across Tarot, Numerology and Energy Healing.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="path" id="path">
+      <div class="section-intro">
+        <p class="eyebrow">Begin Where You Are</p>
+        <h2>Where Does Your Curiosity Lead?</h2>
+      </div>
+      <div class="path-circles">
+        <a class="path-circle" href="#course-tarot" data-tone="ivory">
+          <span class="circle-label">Tarot</span>
+          <p>“I want to understand intuition and guidance.”</p>
+        </a>
+        <a class="path-circle" href="#course-numerology" data-tone="teal">
+          <span class="circle-label">Numerology</span>
+          <p>“I want to understand numbers and patterns.”</p>
+        </a>
+        <a class="path-circle" href="#course-energy" data-tone="rose">
+          <span class="circle-label">Energy Healing</span>
+          <p>“I want to understand balance and energy.”</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="consults" id="consultations">
+      <div class="section-intro">
+        <p class="eyebrow">Looking for Personal Guidance?</p>
+        <h2>Your Questions. Your Journey. Your Session.</h2>
+      </div>
+      <div class="consult-grid">
+        <article class="consult-card">
+          <h3>Life-Alignment Tarot</h3>
+          <p class="meta">60 Minutes</p>
+          <p class="price">₹5,100 <span>/ $99</span></p>
+        </article>
+        <article class="consult-card">
+          <h3>Destiny Blueprint</h3>
+          <p class="meta">Loshu Grid + Vedic Numerology</p>
+          <p class="price">₹7,500 <span>/ $149</span></p>
+        </article>
+        <article class="consult-card">
+          <h3>Ultimate Cosmic Fusion</h3>
+          <p class="meta">90-Minute VIP Session</p>
+          <p class="price">₹15,000 <span>/ $249</span></p>
+        </article>
+      </div>
+      <div class="center">
+        <a class="btn btn-ghost magnetic" href="#contact">Enquire About a Session</a>
+      </div>
+    </section>
+
+    <section class="testimonials" id="testimonials">
+      <div class="section-intro">
+        <h2>Different Journeys.<br />One Thing in Common — Clarity.</h2>
+      </div>
+      <div class="testimonial-scroller" id="testimonialTrack">
+        <blockquote>
+          <p>“I finally had clarity about the decision I was struggling with.”</p>
+          <cite>— Neha Sharma, Noida</cite>
+        </blockquote>
+        <blockquote>
+          <p>“The guidance helped me approach my business decision differently.”</p>
+          <cite>— Amit Sharma, Mumbai</cite>
+        </blockquote>
+        <blockquote>
+          <p>“It gave me a safe space to talk about what I was going through.”</p>
+          <cite>— Kiran Yadav, Jaipur</cite>
+        </blockquote>
+        <blockquote>
+          <p>“I finally had clarity about the decision I was struggling with.”</p>
+          <cite>— Neha Sharma, Noida</cite>
+        </blockquote>
+        <blockquote>
+          <p>“The guidance helped me approach my business decision differently.”</p>
+          <cite>— Amit Sharma, Mumbai</cite>
+        </blockquote>
+      </div>
+      <p class="drag-hint">Drag to move through the stories</p>
+    </section>
+
+    <section class="final-cta" id="final">
+      <div class="final-line" aria-hidden="true"></div>
+      <p class="eyebrow light">Your next curve could become your new direction.</p>
+      <h2>Ready to Learn With Manisha?</h2>
+      <p class="lede">Choose the path that speaks to you and begin your journey through Tarot, Numerology or Energy Healing.</p>
+      <div class="hero-actions">
+        <a class="btn btn-gold magnetic" href="#courses">Explore Courses</a>
+        <a class="btn btn-ghost magnetic" href="#contact">Chat with Manisha</a>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="contact-grid">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h2>Begin the Conversation</h2>
+          <p>Share which course or session you are drawn to. A member of the academy will respond with next steps.</p>
+          <ul class="contact-meta">
+            <li>WhatsApp — <span>Add number</span></li>
+            <li>Phone — <span>Add number</span></li>
+            <li>Email — <span>Add address</span></li>
+          </ul>
+        </div>
+        <form class="contact-form" id="contactForm">
+          <label>
+            Name
+            <input type="text" name="name" required />
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" required />
+          </label>
+          <label>
+            Interest
+            <select name="interest">
+              <option>The Elite Tarot Architect</option>
+              <option>Premium Vedic & Loshu Grid Numerology</option>
+              <option>Quantum Chakra & Bio-Energy Healer</option>
+              <option>Private Consultation</option>
+            </select>
+          </label>
+          <label>
+            Message
+            <textarea name="message" rows="4"></textarea>
+          </label>
+          <button class="btn btn-gold" type="submit">Send Enquiry</button>
+          <p class="form-note" id="formNote" hidden>Thank you. Your enquiry has been noted. Please add WhatsApp, phone and email details when they are available.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p class="footer-mark">Life’s Curve</p>
+    <p class="footer-sub">Tarot • Numerology • Energy Healing • Cosmic Academy</p>
+    <nav>
+      <a href="#courses">Courses</a>
+      <a href="#about">About Manisha</a>
+      <a href="#consultations">Consultations</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <p class="placeholders">WhatsApp · Phone · Email</p>
+    <p class="disclaimer">Tarot, numerology and energy healing are spiritual and complementary practices intended for personal guidance and wellbeing. They should not be considered a substitute for professional medical, legal, financial or mental-health advice.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

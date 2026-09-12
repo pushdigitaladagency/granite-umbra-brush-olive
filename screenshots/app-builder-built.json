@@ -1,0 +1,38 @@
+{
+  "url": "http://127.0.0.1:8081/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Life’s Curve by Manisha",
+      "hasCanvas": false,
+      "bodyTextLen": 3945,
+      "bodyTextHash": "1295df472bef340146d483d585fa38ad807801f9bf4b795ce98932aaf0478714",
+      "bodyTextPrefix": "Life’s Curve COURSES ABOUT MANISHA CONSULTATIONS TESTIMONIALS CO",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Life’s Curve by Manisha",
+      "hasCanvas": false,
+      "bodyTextLen": 3872,
+      "bodyTextHash": "2716d84f617ec5f3263dedb3d151c0d252e9fdbe7d8a44aef8618c44d6688d92",
+      "bodyTextPrefix": "Life’s Curve 4 9 2 3 5 7 Life’s Curve MANISHA’S COSMIC ACADEMY L",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-built.json",
+  "divergesFromBaseline": false,
+  "baselineReasons": []
+}

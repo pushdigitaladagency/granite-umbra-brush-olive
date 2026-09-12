@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Life’s Curve by Manisha",
+      "hasCanvas": false,
+      "bodyTextLen": 4008,
+      "bodyTextHash": "589c4e4964f82bb81492ed4f96797e794bcbf8fd2224cc072df6f8cf6e242c97",
+      "bodyTextPrefix": "Life’s Curve COURSES ABOUT MANISHA CONSULTATIONS TESTIMONIALS CO",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Life’s Curve by Manisha",
+      "hasCanvas": false,
+      "bodyTextLen": 3813,
+      "bodyTextHash": "cfc46440877f840cbb1c30098df83ba320cf3a9c00700a9e7d7984f806dd4383",
+      "bodyTextPrefix": "Life’s Curve Curve 4 9 2 3 5 7 01 — THE ACADEMY Learn to Read th",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-preview.json"
+}
