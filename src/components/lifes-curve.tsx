@@ -6,6 +6,17 @@ const PARTICLES = Array.from({ length: 28 }, (_, i) => ({
   opacity: 0.18 + (i % 5) * 0.08,
 }));
 
+const STORY_WORDS = ["Life", "doesn’t", "always", "move", "in", "a", "straight", "line."];
+
+const MARQUEE = [
+  "Life’s Curve",
+  "Tarot",
+  "Numerology",
+  "Energy Healing",
+  "Manisha’s Cosmic Academy",
+  "Trust your intuition",
+];
+
 export function LifesCurveSite() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -20,8 +31,11 @@ export function LifesCurveSite() {
   const finalLineRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
   const aboutRef = useRef<HTMLElement>(null);
+  const storyRef = useRef<HTMLElement>(null);
+  const progressRef = useRef<HTMLDivElement>(null);
   const curveLength = useRef(0);
   const [years, setYears] = useState(0);
+  const [storyN, setStoryN] = useState(0);
 
   const pathBg = useMemo(() => {
     if (pathTone === "ivory") {
@@ -64,7 +78,7 @@ export function LifesCurveSite() {
 
       const pts = [
         pagePoint(document.querySelector(".brand-intro"), 0, 0.5) ?? [w * 0.12, 90],
-        pagePoint(document.querySelector(".float-card"), 0.5, 0.5) ?? [w * 0.72, window.innerHeight * 0.5],
+        pagePoint(document.querySelector(".scroll-story-pin"), 0.5, 0.5) ?? [w * 0.5, window.innerHeight * 0.9],
         pagePoint(document.getElementById("about"), 0.22, 0.4) ?? [w * 0.22, window.innerHeight * 1.2],
         pagePoint(document.querySelector(".keywords"), 0.8, 0.5) ?? [w * 0.7, window.innerHeight * 1.5],
         pagePoint(document.getElementById("course-tarot"), 0.5, 0.2) ?? [w * 0.25, window.innerHeight * 2.1],
@@ -132,6 +146,17 @@ export function LifesCurveSite() {
     const onScroll = () => {
       setScrolled(window.scrollY > 24);
       updateCurve();
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      const pageP = max > 0 ? window.scrollY / max : 0;
+      if (progressRef.current) {
+        progressRef.current.style.transform = `scaleX(${pageP})`;
+      }
+      if (storyRef.current) {
+        const el = storyRef.current;
+        const total = Math.max(1, el.offsetHeight - window.innerHeight);
+        const p = Math.min(1, Math.max(0, -el.getBoundingClientRect().top / total));
+        setStoryN(Math.min(STORY_WORDS.length, Math.floor(p * (STORY_WORDS.length + 0.35))));
+      }
     };
 
     const onMove = (e: MouseEvent) => {
@@ -198,6 +223,7 @@ export function LifesCurveSite() {
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", onResize);
     window.addEventListener("mousemove", onMove);
+    onScroll();
 
     const io = new IntersectionObserver(
       (entries) => {
@@ -224,6 +250,11 @@ export function LifesCurveSite() {
     document.querySelectorAll(".loshu").forEach((el) => io.observe(el));
     const whyEl = document.getElementById("why");
     if (whyEl) io.observe(whyEl);
+    document
+      .querySelectorAll(
+        ".section-intro, .course-card, .consult-card, .path-circle, .testimonials blockquote, .about-copy, .about-portrait, .final-cta, .contact-grid > div",
+      )
+      .forEach((el) => io.observe(el));
 
     return () => {
       window.removeEventListener("scroll", onScroll);
@@ -273,6 +304,7 @@ export function LifesCurveSite() {
         <path ref={wavePathRef} className="curve-wave" />
       </svg>
 
+      <div className="scroll-progress" ref={progressRef} aria-hidden="true" />
       <header className={scrolled ? "nav scrolled" : "nav"}>
         <a className="logo" href="#top">
           Life’s Curve
@@ -383,6 +415,20 @@ export function LifesCurveSite() {
           </div>
         </section>
 
+        <section className="scroll-story" id="idea" ref={storyRef}>
+          <div className="scroll-story-pin">
+            <p className="eyebrow">As you move through the page</p>
+            <h2 className="scroll-words">
+              {STORY_WORDS.map((word, i) => (
+                <span key={`${word}-${i}`} className={i < storyN ? (i === STORY_WORDS.length - 1 ? "on accent" : "on") : ""}>
+                  {word}
+                </span>
+              ))}
+            </h2>
+            <p className="scroll-story-note script">Keep scrolling. The line keeps moving.</p>
+          </div>
+        </section>
+
         <section className="about" id="about" ref={aboutRef}>
           <div className="about-portrait">
             <div className="portrait-frame">
@@ -431,6 +477,14 @@ export function LifesCurveSite() {
             </div>
           </div>
         </section>
+
+        <div className="marquee" aria-hidden="true">
+          <div className="marquee-track">
+            {[...MARQUEE, ...MARQUEE].map((item, i) => (
+              <span key={`${item}-${i}`}>{item}</span>
+            ))}
+          </div>
+        </div>
 
         <section className="courses" id="courses">
           <div className="section-intro">

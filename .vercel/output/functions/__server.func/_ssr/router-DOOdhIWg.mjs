@@ -2,7 +2,7 @@ import { i as __toESM } from "../_runtime.mjs";
 import { L as require_react, _ as useRouter, f as createRouter, g as createRootRoute, h as createFileRoute, l as Scripts, m as lazyRouteComponent, p as Outlet, u as HeadContent, v as require_jsx_runtime } from "../_libs/@tanstack/react-router+[...].mjs";
 import { t as TriangleAlert } from "../_libs/lucide-react.mjs";
 import { a as union, i as string, n as number, r as object, t as literal } from "../_libs/zod.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-DXTrQK6N.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-DOOdhIWg.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var FALLBACK_MESSAGE = "An unexpected error occurred. Try reloading the page.";
@@ -296,7 +296,7 @@ function PreviewHostBridge() {
 	}, [router]);
 	return null;
 }
-var styles_default = "/assets/styles-wGAYie59.css";
+var styles_default = "/assets/styles-B6R5Gn4_.css";
 var APP_NAME = "Life’s Curve by Manisha";
 var Route$1 = createRootRoute({
 	head: () => ({
@@ -358,7 +358,7 @@ var Route$1 = createRootRoute({
 		] })]
 	})
 });
-var $$splitComponentImporter = () => import("./routes-aWugXa5v.mjs");
+var $$splitComponentImporter = () => import("./routes-Dp3tTGdE.mjs");
 var rootRouteChildren = { IndexRoute: createFileRoute("/")({ component: lazyRouteComponent($$splitComponentImporter, "component") }).update({
 	id: "/",
 	path: "/",

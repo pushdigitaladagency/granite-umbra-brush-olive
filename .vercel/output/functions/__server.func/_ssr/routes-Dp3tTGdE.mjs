@@ -1,6 +1,6 @@
 import { i as __toESM } from "../_runtime.mjs";
 import { L as require_react, v as require_jsx_runtime } from "../_libs/@tanstack/react-router+[...].mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-aWugXa5v.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-Dp3tTGdE.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var PARTICLES = Array.from({ length: 28 }, (_, i) => ({
@@ -8,6 +8,24 @@ var PARTICLES = Array.from({ length: 28 }, (_, i) => ({
 	top: `${i * 53 % 100}%`,
 	opacity: .18 + i % 5 * .08
 }));
+var STORY_WORDS = [
+	"Life",
+	"doesn’t",
+	"always",
+	"move",
+	"in",
+	"a",
+	"straight",
+	"line."
+];
+var MARQUEE = [
+	"Life’s Curve",
+	"Tarot",
+	"Numerology",
+	"Energy Healing",
+	"Manisha’s Cosmic Academy",
+	"Trust your intuition"
+];
 function LifesCurveSite() {
 	const [menuOpen, setMenuOpen] = (0, import_react.useState)(false);
 	const [scrolled, setScrolled] = (0, import_react.useState)(false);
@@ -22,8 +40,11 @@ function LifesCurveSite() {
 	const finalLineRef = (0, import_react.useRef)(null);
 	const trackRef = (0, import_react.useRef)(null);
 	const aboutRef = (0, import_react.useRef)(null);
+	const storyRef = (0, import_react.useRef)(null);
+	const progressRef = (0, import_react.useRef)(null);
 	const curveLength = (0, import_react.useRef)(0);
 	const [years, setYears] = (0, import_react.useState)(0);
+	const [storyN, setStoryN] = (0, import_react.useState)(0);
 	const pathBg = (0, import_react.useMemo)(() => {
 		if (pathTone === "ivory") return "radial-gradient(ellipse at 50% 40%, rgba(243,238,230,0.08), transparent 55%)";
 		if (pathTone === "teal") return "radial-gradient(ellipse at 50% 40%, rgba(109,144,138,0.16), transparent 55%)";
@@ -52,7 +73,7 @@ function LifesCurveSite() {
 			curveSvg.style.left = "0";
 			const pts = [
 				pagePoint(document.querySelector(".brand-intro"), 0, .5) ?? [w * .12, 90],
-				pagePoint(document.querySelector(".hero-portrait"), .15, .55) ?? [w * .72, window.innerHeight * .5],
+				pagePoint(document.querySelector(".scroll-story-pin"), .5, .5) ?? [w * .5, window.innerHeight * .9],
 				pagePoint(document.getElementById("about"), .22, .4) ?? [w * .22, window.innerHeight * 1.2],
 				pagePoint(document.querySelector(".keywords"), .8, .5) ?? [w * .7, window.innerHeight * 1.5],
 				pagePoint(document.getElementById("course-tarot"), .5, .2) ?? [w * .25, window.innerHeight * 2.1],
@@ -111,6 +132,15 @@ function LifesCurveSite() {
 		const onScroll = () => {
 			setScrolled(window.scrollY > 24);
 			updateCurve();
+			const max = document.documentElement.scrollHeight - window.innerHeight;
+			const pageP = max > 0 ? window.scrollY / max : 0;
+			if (progressRef.current) progressRef.current.style.transform = `scaleX(${pageP})`;
+			if (storyRef.current) {
+				const el = storyRef.current;
+				const total = Math.max(1, el.offsetHeight - window.innerHeight);
+				const p = Math.min(1, Math.max(0, -el.getBoundingClientRect().top / total));
+				setStoryN(Math.min(STORY_WORDS.length, Math.floor(p * (STORY_WORDS.length + .35))));
+			}
 		};
 		const onMove = (e) => {
 			const glow = glowRef.current;
@@ -177,6 +207,7 @@ function LifesCurveSite() {
 		window.addEventListener("scroll", onScroll, { passive: true });
 		window.addEventListener("resize", onResize);
 		window.addEventListener("mousemove", onMove);
+		onScroll();
 		const io = new IntersectionObserver((entries) => {
 			entries.forEach((entry) => {
 				if (!entry.isIntersecting) return;
@@ -197,6 +228,7 @@ function LifesCurveSite() {
 		document.querySelectorAll(".loshu").forEach((el) => io.observe(el));
 		const whyEl = document.getElementById("why");
 		if (whyEl) io.observe(whyEl);
+		document.querySelectorAll(".section-intro, .course-card, .consult-card, .path-circle, .testimonials blockquote, .about-copy, .about-portrait, .final-cta, .contact-grid > div").forEach((el) => io.observe(el));
 		return () => {
 			window.removeEventListener("scroll", onScroll);
 			window.removeEventListener("resize", onResize);
@@ -278,6 +310,11 @@ function LifesCurveSite() {
 					})
 				]
 			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+				className: "scroll-progress",
+				ref: progressRef,
+				"aria-hidden": "true"
+			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("header", {
 				className: scrolled ? "nav scrolled" : "nav",
 				children: [
@@ -339,6 +376,55 @@ function LifesCurveSite() {
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 								className: "hero-orbit",
 								"aria-hidden": "true"
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("svg", {
+								className: "hero-curve",
+								viewBox: "0 0 1200 800",
+								preserveAspectRatio: "none",
+								"aria-hidden": "true",
+								children: [
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("defs", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("linearGradient", {
+										id: "heroCurveGrad",
+										x1: "0",
+										y1: "0",
+										x2: "1",
+										y2: "1",
+										children: [
+											/* @__PURE__ */ (0, import_jsx_runtime.jsx)("stop", {
+												offset: "0%",
+												stopColor: "#c4a574",
+												stopOpacity: "0.15"
+											}),
+											/* @__PURE__ */ (0, import_jsx_runtime.jsx)("stop", {
+												offset: "40%",
+												stopColor: "#c4a574",
+												stopOpacity: "0.9"
+											}),
+											/* @__PURE__ */ (0, import_jsx_runtime.jsx)("stop", {
+												offset: "100%",
+												stopColor: "#6d908a",
+												stopOpacity: "0.3"
+											})
+										]
+									}) }),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", {
+										className: "hero-curve-path",
+										id: "heroDrawPath",
+										d: "M 30 480 C 240 80, 500 720, 780 250 S 1080 90, 1200 340",
+										fill: "none"
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("circle", {
+										className: "hero-curve-dot",
+										r: "5",
+										fill: "#d8c09a",
+										children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("animateMotion", {
+											dur: "6s",
+											repeatCount: "indefinite",
+											rotate: "auto",
+											children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("mpath", { href: "#heroDrawPath" })
+										})
+									})
+								]
 							}),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 								className: "hero-particles",
@@ -488,23 +574,39 @@ function LifesCurveSite() {
 									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 										className: "trust",
 										children: "10+ Years of Guidance & Practice"
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+										className: "hand script",
+										children: "Life doesn’t always move in a straight line"
 									})
 								]
-							}),
-							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-								className: "hero-portrait",
-								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-									className: "portrait-mask",
-									children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
-										src: "/manisha-hero.jpg",
-										alt: "Manisha, founder of Life’s Curve and Manisha’s Cosmic Academy"
-									})
-								}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-									className: "hand script",
-									children: "Life doesn’t always move in a straight line"
-								})]
 							})
 						]
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("section", {
+						className: "scroll-story",
+						id: "idea",
+						ref: storyRef,
+						children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "scroll-story-pin",
+							children: [
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+									className: "eyebrow",
+									children: "As you move through the page"
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
+									className: "scroll-words",
+									children: STORY_WORDS.map((word, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+										className: i < storyN ? i === STORY_WORDS.length - 1 ? "on accent" : "on" : "",
+										children: word
+									}, `${word}-${i}`))
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+									className: "scroll-story-note script",
+									children: "Keep scrolling. The line keeps moving."
+								})
+							]
+						})
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
 						className: "about",
@@ -572,6 +674,14 @@ function LifesCurveSite() {
 								]
 							})
 						]
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+						className: "marquee",
+						"aria-hidden": "true",
+						children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+							className: "marquee-track",
+							children: [...MARQUEE, ...MARQUEE].map((item, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: item }, `${item}-${i}`))
+						})
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
 						className: "courses",
